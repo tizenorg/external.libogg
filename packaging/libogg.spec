@@ -6,6 +6,7 @@ Group:      System/Libraries
 License:    BSD
 URL:        http://www.xiph.org/
 Source0:    http://downloads.xiph.org/releases/ogg/%{name}-%{version}.tar.gz
+Source1001: packaging/libogg.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 
@@ -28,6 +29,7 @@ needed for development using libogg.
 %setup -q -n %{name}-%{version}
 
 %build
+cp %{SOURCE1001} .
 
 %configure --disable-static
 make %{?jobs:-j%jobs}
@@ -43,9 +45,11 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest libogg.manifest
 %{_libdir}/libogg.so.*
 
 %files devel
+%manifest libogg.manifest
 %dir %{_includedir}/ogg
 %{_includedir}/ogg/ogg.h
 %{_includedir}/ogg/os_types.h
