@@ -1,7 +1,7 @@
 Name:       libogg
 Summary:    The Ogg bitstream file format library
 Version:    1.2.1
-Release:    1
+Release:    2
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.xiph.org/
