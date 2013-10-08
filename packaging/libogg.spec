@@ -34,6 +34,8 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
 %make_install 
 
 rm -rf $RPM_BUILD_ROOT%{_docdir}
@@ -45,6 +47,7 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 %files
 %manifest libogg.manifest
 %{_libdir}/libogg.so.*
+/usr/share/license/%{name}
 
 %files devel
 %dir %{_includedir}/ogg
