@@ -2,7 +2,7 @@
 Name:       libogg
 Summary:    The Ogg bitstream file format library
 Version:    1.2.1
-Release:    4
+Release:    3
 Group:      System/Libraries
 License:    BSD
 URL:        http://www.xiph.org/
@@ -35,8 +35,6 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/license
-cp COPYING %{buildroot}/usr/share/license/%{name}
 %make_install 
 
 rm -rf $RPM_BUILD_ROOT%{_docdir}
@@ -48,7 +46,6 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 %files
 %manifest libogg.manifest
 %{_libdir}/libogg.so.*
-/usr/share/license/%{name}
 
 %files devel
 %dir %{_includedir}/ogg
@@ -58,3 +55,4 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 %{_libdir}/libogg.so
 %{_libdir}/pkgconfig/ogg.pc
 %{_datadir}/aclocal/ogg.m4
+
