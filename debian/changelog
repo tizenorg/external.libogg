@@ -1,0 +1,14 @@
+libogg (1.2.1-0slp2) unstable; urgency=low
+
+  * Repackaging
+  * Git : 165.213.180.234:/git/slp/unmodified/libogg
+  * Tag : libogg_1.2.1-0slp2
+
+ -- YoungHwan Ahn <younghwan_.an@samsung.com>  Mon, 29 Nov 2010 15:00:31 +0900
+
+libogg (1.1.4~dfsg-0) unstable; urgency=low
+
+  * Import to slp2.0
+
+ -- KwangHui Cho <kwanghui.cho@samsung.com>  Thu, 07 Jan 2010 16:13:40 +0900
+ 

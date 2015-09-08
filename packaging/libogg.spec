@@ -1,9 +1,10 @@
+#sbs-git:slp/unmodified/libogg libogg 1.2.1 66cb95f63390bb63c54636de14c71b86dcdad410
 Name:       libogg
 Summary:    The Ogg bitstream file format library
 Version:    1.2.1
-Release:    2
+Release:    3
 Group:      System/Libraries
-License:    BSD
+License:    BSD-2.0
 URL:        http://www.xiph.org/
 Source0:    http://downloads.xiph.org/releases/ogg/%{name}-%{version}.tar.gz
 Requires(post): /sbin/ldconfig
@@ -43,6 +44,7 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest libogg.manifest
 %{_libdir}/libogg.so.*
 
 %files devel

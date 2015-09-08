@@ -24,6 +24,8 @@
 #include <string.h>
 #include <ogg/ogg.h>
 
+#define GST_EXT_LIBOGG_MODIFICATION
+
 /* A complete description of Ogg framing exists in docs/framing.html */
 
 int ogg_page_version(const ogg_page *og){
@@ -696,9 +698,11 @@ long ogg_sync_pageseek(ogg_sync_state *oy,ogg_page *og){
          at all) */
       /* replace the computed checksum with the one actually read in */
       memcpy(page+22,chksum,4);
-      
+
+#ifndef GST_EXT_LIBOGG_MODIFICATION
       /* Bad checksum. Lose sync */
       goto sync_fail;
+#endif
     }
   }
   
