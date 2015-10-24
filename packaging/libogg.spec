@@ -37,7 +37,8 @@ make %{?jobs:-j%jobs}
 rm -rf %{buildroot}
 %make_install 
 
-rm -rf $RPM_BUILD_ROOT%{_docdir}
+%find_docs
+%remove_docs
 
 %post -p /sbin/ldconfig
 
